@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <th:block th:fragment="head (title)">
+        <meta charset="UTF-8">
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+    </th:block>
+</head>
+<body>
+<header th:fragment="header">
+    <h1>AdLister</h1>
+</header>
+</body>
+</html>
