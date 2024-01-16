@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Bets</title>
+</head>
+<body>
+    <h3 th:if="${guess != null}">You guessed [[${guess}]].</h3>
+    <h3 th:if="${roll != null}">I rolled a [[${roll}]].</h3>
+    <h3 th:if="${result} != null">Your guess was [[${result}]]!</h3>
+
+    <h1>What do you think I will roll?</h1>
+    <a href="/roll-dice/1">1</a>
+    <a href="/roll-dice/2">2</a>
+    <a href="/roll-dice/3">3</a>
+    <a href="/roll-dice/4">4</a>
+    <a href="/roll-dice/5">5</a>
+    <a href="/roll-dice/6">6</a>
+</body>
+</html>
