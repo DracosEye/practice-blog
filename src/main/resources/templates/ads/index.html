@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
-    <th:block th:replace="~{partials/partials :: head (title='Submit an Ad')}"></th:block>
-</head>
-<body>
-<header th:include="~{partials/partials :: header}"></header>
-<div th:each="ad : ${ads}">
-    <h2 th:text="${ad.title}"></h2>
-    <p th:text="${ad.description}"></p>
-</div>
-</body>
+    <head>
+    <!--    <th:block th:replace="~{partials/partials :: head (title='Submit an Ad')}"></th:block>-->
+        <meta charset="UTF-8">
+        <title>Welcome to AdLister</title>
+    </head>
+    <body>
+    <!--<header th:include="~{partials/partials :: header}"></header>-->
+        <form action="/ads/search" method="get">
+            <label for="search">Find an Ad:</label>
+            <input type="text" name="search" id="search">
+            <button>Search</button>
+        </form>
+        <div th:if="${results}">
+            <ul>
+                <li th:each="ad : ${results}">
+                    <h2 th:text="${ad.title}"></h2>
+                    <p th:text="${ad.description}"></p>
+                </li>
+            </ul>
+        </div>
+<!--        <div th:each="ad : ${ads}">-->
+<!--            <h2> <a th:text="${ad.title}"-->
+<!--            th:href="@{|/ads/${ad.id}|}"></a></h2>-->
+<!--            <p th:text="${ad.description}"></p>-->
+<!--        </div>-->
+    </body>
 </html>
